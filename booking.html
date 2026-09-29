@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Your Tour - Delight Tours</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">🌍 Delight Tours</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="destinations.html">Destinations</a></li>
+                <li><a href="why-uganda.html">Why Uganda</a></li>
+                <li><a href="booking.html" class="active">Book Now</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="page-header">
+        <h1>Book Your Uganda Adventure</h1>
+        <p>Fill out the form below and our team will get back to you within 24 hours</p>
+    </section>
+
+    <section class="container booking-container">
+        <div class="booking-layout">
+            <div class="booking-form-section">
+                <h2>Booking Information</h2>
+                <form id="bookingForm" class="booking-form">
+                    <div class="form-section">
+                        <h3>Tour Package</h3>
+                        <div class="form-group">
+                            <label for="package">Select Tour Package *</label>
+                            <select id="package" name="package" required>
+                                <option value="">Choose a package...</option>
+                                <option value="gorilla">Gorilla Trekking Adventure (3 Days) - From $1,850</option>
+                                <option value="safari">Classic Safari Experience (5 Days) - From $2,400</option>
+                                <option value="adventure">Adventure & Adrenaline (4 Days) - From $1,200</option>
+                                <option value="wildlife">Ultimate Wildlife Safari (7 Days) - From $3,800</option>
+                                <option value="primate">Primate Discovery (6 Days) - From $2,900</option>
+                                <option value="cultural">Cultural Experience (4 Days) - From $1,500</option>
+                                <option value="custom">Custom Tour (Contact for pricing)</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="destination">Preferred Destination(s)</label>
+                            <select id="destination" name="destination">
+                                <option value="">Select destination...</option>
+                                <option value="bwindi">Bwindi Impenetrable National Park</option>
+                                <option value="murchison">Murchison Falls National Park</option>
+                                <option value="queen-elizabeth">Queen Elizabeth National Park</option>
+                                <option value="kibale">Kibale National Park</option>
+                                <option value="jinja">Jinja & The Nile</option>
+                                <option value="rwenzori">Rwenzori Mountains</option>
+                                <option value="bunyonyi">Lake Bunyonyi</option>
+                                <option value="kidepo">Kidepo Valley National Park</option>
+                                <option value="multiple">Multiple Destinations</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3>Travel Dates</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="start-date">Start Date *</label>
+                                <input type="date" id="start-date" name="start-date" min="2026-09-30" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="end-date">End Date</label>
+                                <input type="date" id="end-date" name="end-date" min="2026-09-30">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>
+                                <input type="checkbox" id="flexible-dates" name="flexible-dates">
+                                My dates are flexible
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3>Guest Information</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="adults">Number of Adults (18+) *</label>
+                                <input type="number" id="adults" name="adults" min="1" max="20" value="2" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="children">Number of Children (Under 18)</label>
+                                <input type="number" id="children" name="children" min="0" max="10" value="0">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="accommodation">Accommodation Preference *</label>
+                            <select id="accommodation" name="accommodation" required>
+                                <option value="">Select accommodation...</option>
+                                <option value="budget">Budget (Hostels & Basic Lodges)</option>
+                                <option value="mid-range">Mid-Range (Comfortable Lodges)</option>
+                                <option value="luxury">Luxury (Premium Lodges & Camps)</option>
+                                <option value="ultra-luxury">Ultra-Luxury (Top-tier Properties)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3>Your Contact Information</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="first-name">First Name *</label>
+                                <input type="text" id="first-name" name="first-name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="last-name">Last Name *</label>
+                                <input type="text" id="last-name" name="last-name" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="phone">Phone Number *</label>
+                                <input type="tel" id="phone" name="phone" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="country">Country of Residence *</label>
+                                <input type="text" id="country" name="country" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3>Additional Information</h3>
+                        <div class="form-group">
+                            <label for="special-requests">Special Requests or Dietary Requirements</label>
+                            <textarea id="special-requests" name="special-requests" rows="4" placeholder="Please let us know about any dietary restrictions, physical limitations, special celebrations, or other requests..."></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="how-heard">How did you hear about us?</label>
+                            <select id="how-heard" name="how-heard">
+                                <option value="">Select option...</option>
+                                <option value="google">Google Search</option>
+                                <option value="social-media">Social Media</option>
+                                <option value="referral">Friend/Family Referral</option>
+                                <option value="travel-agent">Travel Agent</option>
+                                <option value="previous-customer">Previous Customer</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group checkbox-group">
+                        <label>
+                            <input type="checkbox" id="newsletter" name="newsletter" checked>
+                            Yes, I'd like to receive travel tips and special offers from Delight Tours
+                        </label>
+                    </div>
+
+                    <div class="form-group checkbox-group">
+                        <label>
+                            <input type="checkbox" id="terms" name="terms" required>
+                            I agree to the <a href="#" target="_blank">Terms & Conditions</a> and <a href="#" target="_blank">Privacy Policy</a> *
+                        </label>
+                    </div>
+
+                    <button type="submit" class="cta-button submit-button">Submit Booking Request</button>
+
+                    <p class="form-note">* Required fields. Our team will review your request and send you a detailed quote within 24 hours.</p>
+                </form>
+
+                <div id="success-message" class="success-message" style="display: none;">
+                    <h3>✅ Booking Request Received!</h3>
+                    <p>Thank you for your interest in Delight Tours. We've received your booking request and will get back to you within 24 hours with a detailed quote and itinerary.</p>
+                    <p>A confirmation email has been sent to your email address.</p>
+                </div>
+            </div>
+
+            <div class="booking-sidebar">
+                <div class="sidebar-card">
+                    <h3>Why Book With Us?</h3>
+                    <ul class="benefits-list">
+                        <li>✓ 15+ years of experience</li>
+                        <li>✓ Licensed & insured operators</li>
+                        <li>✓ Expert local guides</li>
+                        <li>✓ 24/7 support during your trip</li>
+                        <li>✓ Flexible cancellation policies</li>
+                        <li>✓ Best price guarantee</li>
+                        <li>✓ Sustainable tourism practices</li>
+                    </ul>
+                </div>
+
+                <div class="sidebar-card">
+                    <h3>📞 Need Help?</h3>
+                    <p>Our travel experts are here to assist you</p>
+                    <div class="contact-methods">
+                        <p><strong>Email:</strong><br>info@delighttours.ug</p>
+                        <p><strong>Phone:</strong><br>+256 700 000 000</p>
+                        <p><strong>WhatsApp:</strong><br>+256 700 000 000</p>
+                    </div>
+                    <a href="contact.html" class="btn-contact">Contact Us Directly</a>
+                </div>
+
+                <div class="sidebar-card">
+                    <h3>💡 Planning Tips</h3>
+                    <ul class="tips-list">
+                        <li>Book gorilla permits 3-6 months in advance</li>
+                        <li>Best travel months: June-Sept, Dec-Feb</li>
+                        <li>Yellow fever vaccination required</li>
+                        <li>USD is widely accepted</li>
+                        <li>Visa available on arrival ($50)</li>
+                    </ul>
+                </div>
+
+                <div class="sidebar-card popular-packages">
+                    <h3>Popular Packages</h3>
+                    <div class="mini-package">
+                        <h4>🦍 Gorilla Trekking</h4>
+                        <p>3 Days • From $1,850</p>
+                    </div>
+                    <div class="mini-package">
+                        <h4>🦁 Classic Safari</h4>
+                        <p>5 Days • From $2,400</p>
+                    </div>
+                    <div class="mini-package">
+                        <h4>🌊 Adventure & Nile</h4>
+                        <p>4 Days • From $1,200</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Delight Tours</h3>
+                <p>Your trusted partner for unforgettable Uganda adventures since 2011.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="destinations.html">Destinations</a></li>
+                    <li><a href="booking.html">Book Now</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <p>📧 info@delighttours.ug</p>
+                <p>📱 +256 700 000 000</p>
+                <p>📍 Kampala, Uganda</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Delight Tours. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Pre-fill form from URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.get('package')) {
+            document.getElementById('package').value = urlParams.get('package');
+        }
+        if (urlParams.get('destination')) {
+            document.getElementById('destination').value = urlParams.get('destination');
+        }
+
+        // Set minimum date to today
+        const today = new Date().toISOString().split('T')[0];
+        document.getElementById('start-date').min = today;
+        document.getElementById('end-date').min = today;
+
+        // Form validation and submission
+        document.getElementById('bookingForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            // Basic validation
+            const startDate = new Date(document.getElementById('start-date').value);
+            const endDate = new Date(document.getElementById('end-date').value);
+
+            if (endDate && startDate >= endDate) {
+                alert('End date must be after start date');
+                return;
+            }
+
+            // Show success message
+            document.querySelector('.booking-form-section').style.display = 'none';
+            document.getElementById('success-message').style.display = 'block';
+
+            // Scroll to success message
+            document.getElementById('success-message').scrollIntoView({ behavior: 'smooth' });
+
+            // In a real application, this would send data to a server
+            console.log('Form submitted:', new FormData(this));
+        });
+
+        // Update end date minimum when start date changes
+        document.getElementById('start-date').addEventListener('change', function() {
+            document.getElementById('end-date').min = this.value;
+        });
+
+        // Calculate and suggest end date based on package
+        document.getElementById('package').addEventListener('change', function() {
+            const startDateInput = document.getElementById('start-date');
+            const endDateInput = document.getElementById('end-date');
+
+            if (startDateInput.value) {
+                const startDate = new Date(startDateInput.value);
+                let days = 3; // default
+
+                const packageValue = this.value;
+                if (packageValue === 'safari') days = 5;
+                else if (packageValue === 'adventure') days = 4;
+                else if (packageValue === 'wildlife') days = 7;
+                else if (packageValue === 'primate') days = 6;
+                else if (packageValue === 'cultural') days = 4;
+
+                const endDate = new Date(startDate);
+                endDate.setDate(endDate.getDate() + days);
+                endDateInput.value = endDate.toISOString().split('T')[0];
+            }
+        });
+    </script>
+</body>
+</html>

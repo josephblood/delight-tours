@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delight Tours - Discover the Pearl of Africa</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        header {
+            background: linear-gradient(135deg, #2c5f2d 0%, #97bc62 100%);
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.3s;
+        }
+
+        .nav-links a:hover {
+            opacity: 0.8;
+        }
+
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%232c5f2d" width="1200" height="600"/><path fill="%2397bc62" opacity="0.3" d="M0 300 Q300 200 600 300 T1200 300 V600 H0 Z"/></svg>');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            margin-top: 60px;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero-content p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+
+        .cta-button {
+            background: #ff6b35;
+            color: white;
+            padding: 1rem 2.5rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(255,107,53,0.3);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #2c5f2d;
+        }
+
+        .destinations-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .destination-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .destination-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+
+        .card-image {
+            width: 100%;
+            height: 250px;
+            background: linear-gradient(135deg, #2c5f2d 0%, #97bc62 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+        }
+
+        .card-content {
+            padding: 1.5rem;
+        }
+
+        .card-content h3 {
+            color: #2c5f2d;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .card-content p {
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        .highlights {
+            list-style: none;
+            margin-top: 1rem;
+        }
+
+        .highlights li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #eee;
+            color: #555;
+        }
+
+        .highlights li:before {
+            content: "✓ ";
+            color: #97bc62;
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+
+        .why-uganda {
+            background: #f9f9f9;
+            padding: 4rem 2rem;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .feature-box {
+            text-align: center;
+            padding: 2rem;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-box h3 {
+            color: #2c5f2d;
+            margin-bottom: 0.5rem;
+        }
+
+        footer {
+            background: #2c5f2d;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .contact-section {
+            background: #97bc62;
+            padding: 3rem 2rem;
+            text-align: center;
+            color: white;
+        }
+
+        .contact-section h2 {
+            margin-bottom: 1rem;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .hero-content p {
+                font-size: 1.2rem;
+            }
+
+            .nav-links {
+                gap: 1rem;
+            }
+
+            .destinations-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">🌍 Delight Tours</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#destinations">Destinations</a></li>
+                <li><a href="#why-uganda">Why Uganda</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Discover Uganda's Natural Wonders</h1>
+            <p>Experience the Pearl of Africa with Delight Tours</p>
+            <a href="#destinations" class="cta-button">Explore Destinations</a>
+        </div>
+    </section>
+
+    <section id="destinations" class="container">
+        <h2 class="section-title">Our Premier Destinations</h2>
+        <div class="destinations-grid">
+            <div class="destination-card">
+                <div class="card-image">🦍</div>
+                <div class="card-content">
+                    <h3>Bwindi Impenetrable National Park</h3>
+                    <p>Home to over half of the world's remaining mountain gorillas, Bwindi offers an unforgettable wildlife experience in an ancient rainforest.</p>
+                    <ul class="highlights">
+                        <li>Mountain gorilla trekking experiences</li>
+                        <li>UNESCO World Heritage Site</li>
+                        <li>120+ mammal species</li>
+                        <li>350+ bird species</li>
+                        <li>Dense ancient rainforest</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="destination-card">
+                <div class="card-image">💧</div>
+                <div class="card-content">
+                    <h3>Murchison Falls National Park</h3>
+                    <p>Uganda's largest national park features the spectacular Murchison Falls, where the mighty Nile explodes through a narrow gorge.</p>
+                    <ul class="highlights">
+                        <li>Dramatic Murchison Falls</li>
+                        <li>Nile River boat safaris</li>
+                        <li>Lions, elephants & giraffes</li>
+                        <li>Hippos and crocodiles</li>
+                        <li>Diverse wildlife viewing</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="destination-card">
+                <div class="card-image">🦁</div>
+                <div class="card-content">
+                    <h3>Queen Elizabeth National Park</h3>
+                    <p>Uganda's most popular safari destination, famous for its tree-climbing lions and the stunning Kazinga Channel.</p>
+                    <ul class="highlights">
+                        <li>Tree-climbing lions in Ishasha</li>
+                        <li>Kazinga Channel boat cruises</li>
+                        <li>95+ mammal species</li>
+                        <li>600+ bird species</li>
+                        <li>Diverse ecosystems</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="destination-card">
+                <div class="card-image">🏔️</div>
+                <div class="card-content">
+                    <h3>Rwenzori Mountains</h3>
+                    <p>The legendary "Mountains of the Moon" offer spectacular hiking and mountaineering adventures with snow-capped peaks near the equator.</p>
+                    <ul class="highlights">
+                        <li>Africa's third highest peak</li>
+                        <li>UNESCO World Heritage Site</li>
+                        <li>Unique alpine vegetation</li>
+                        <li>Glaciers near the equator</li>
+                        <li>Multi-day trekking routes</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="destination-card">
+                <div class="card-image">🏞️</div>
+                <div class="card-content">
+                    <h3>Lake Bunyonyi</h3>
+                    <p>One of Africa's deepest lakes, surrounded by terraced hills and dotted with 29 islands, perfect for relaxation and water activities.</p>
+                    <ul class="highlights">
+                        <li>29 scenic islands</li>
+                        <li>Bilharzia-free swimming</li>
+                        <li>Canoeing and boat tours</li>
+                        <li>Traditional Batwa culture</li>
+                        <li>Birdwatching paradise</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="destination-card">
+                <div class="card-image">🌊</div>
+                <div class="card-content">
+                    <h3>Jinja & The Nile</h3>
+                    <p>The adventure capital of East Africa, home to the source of the Nile River and world-class white water rafting.</p>
+                    <ul class="highlights">
+                        <li>Source of the Nile</li>
+                        <li>World-class rafting</li>
+                        <li>Bungee jumping</li>
+                        <li>Kayaking adventures</li>
+                        <li>Sunset boat cruises</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="why-uganda">
+        <div class="container">
+            <h2 class="section-title" id="why-uganda">Why Choose Uganda?</h2>
+            <div class="features-grid">
+                <div class="feature-box">
+                    <div class="feature-icon">🦒</div>
+                    <h3>Rich Wildlife</h3>
+                    <p>Home to the Big Five, mountain gorillas, chimpanzees, and over 1,000 bird species</p>
+                </div>
+                <div class="feature-box">
+                    <div class="feature-icon">🌳</div>
+                    <h3>Stunning Landscapes</h3>
+                    <p>From tropical rainforests to snow-capped mountains and pristine lakes</p>
+                </div>
+                <div class="feature-box">
+                    <div class="feature-icon">👥</div>
+                    <h3>Warm Culture</h3>
+                    <p>Experience genuine African hospitality from friendly local communities</p>
+                </div>
+                <div class="feature-box">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Adventure Activities</h3>
+                    <p>Rafting, hiking, gorilla trekking, and safari experiences</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <h2>Ready to Start Your Adventure?</h2>
+        <p>Contact Delight Tours today to plan your perfect Uganda experience</p>
+        <div class="contact-info">
+            <div class="contact-item">
+                <span>📧</span>
+                <span>info@delighttours.ug</span>
+            </div>
+            <div class="contact-item">
+                <span>📱</span>
+                <span>+256 700 000 000</span>
+            </div>
+            <div class="contact-item">
+                <span>📍</span>
+                <span>Kampala, Uganda</span>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Delight Tours. All rights reserved. | Discover the Pearl of Africa</p>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.destination-card, .feature-box').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>

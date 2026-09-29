@@ -1,0 +1,15 @@
+{
+  "name": "delight-tours",
+  "version": "1.0.0",
+  "description": "Delight Tours - Uganda Travel and Tour Website",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": ["travel", "tours", "uganda", "safari"],
+  "author": "Delight Tours",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
